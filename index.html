@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Albion AVA Raid Split Loot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>ALBION AVA RAID SPLIT LOOT</h1>
+  <p>Chest per Dungeon • Fair Split • No Drama</p>
+</header>
+
+<main>
+
+  <section class="card">
+  <h2>AVA RAID – Dungeon Loot</h2>
+
+  <div id="dungeonContainer">
+
+    <!-- DUNGEON DEFAULT -->
+    <div class="dungeon">
+      <h3>Dungeon 1</h3>
+
+      <div class="chest-list">
+        <div class="chest gold">
+          <span>🟡 Gold Chest</span>
+          <input type="number" class="qty" placeholder="Jumlah Chest">
+          <input type="number" class="value" placeholder="Silver / Chest">
+        </div>
+      </div>
+
+      <button onclick="addChest(this)">+ Tambah Chest</button>
+    </div>
+
+  </div>
+
+  <button onclick="addDungeon()">+ Tambah Dungeon</button>
+  <button class="split-btn" onclick="calculateDungeonLoot()">Hitung Loot AVA</button>
+
+  <div id="dungeonResult"></div>
+</section>
+
+
+  <!-- SPLIT LOOT -->
+  <section class="card">
+    <h2>Split Loot Party</h2>
+
+    <label>Total Silver</label>
+    <input type="number" id="totalSilver">
+
+    <label>Guild Tax (%)</label>
+    <input type="number" id="tax" value="10">
+
+    <div id="players">
+      <div class="player">
+        <input placeholder="Nama Player">
+        <select>
+          <option value="1">DPS</option>
+          <option value="1.2">Tank</option>
+          <option value="1.2">Healer</option>
+          <option value="1.1">Scout</option>
+        </select>
+      </div>
+    </div>
+
+    <button onclick="addPlayer()">+ Tambah Player</button>
+    <button class="split-btn" onclick="splitLoot()">Split Loot</button>
+
+    <div id="splitResult"></div>
+  </section>
+
+</main>
+
+<footer>
+  Albion Online • AVA Raid Loot System
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
